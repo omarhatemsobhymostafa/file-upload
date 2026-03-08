@@ -9,7 +9,7 @@ export default function Upload() {
         formData.append("file", file)
 
         try {
-            const res = await fetch("https://file-upload-backend.railway.app", { method: "POST", body: formData })
+            const res = await fetch("https://file-upload-backend.railway.app/upload", { method: "POST", body: formData })
 
             if (!res.ok) throw new Error(`Server error: ${res.status}`)
             const data = await res.json()
